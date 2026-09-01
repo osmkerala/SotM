@@ -25,4 +25,9 @@ Either way, set the `kl` subdomain's DNS to point at wherever it's hosted (a CNA
 
 ## Editing content
 
-Everything is in `index.html` — sections are commented with `id`s (`about`, `schedule`, `editions`, `sponsors`, `contact`). Colours and spacing are in `assets/css/style.css` under `:root` at the top. The schedule is currently a placeholder ("full session list to be announced") — update it once the agenda is set.
+Everything is in `index.html` — sections are commented with `id`s (`about`, `schedule`, `register`, `editions`, `sponsors`, `contact`). Colours and spacing are in `assets/css/style.css` under `:root` at the top. Two sections are still placeholders:
+
+- **Schedule** (`#schedule`) — shows day-level slots only, with a "detailed schedule will be updated soon" note. Fill in the real sessions once the agenda is set.
+- **Register** (`#register`) — a "coming soon" banner linking to the OSM wiki page for updates. Replace it with a real registration link/form once one exists.
+
+Contact details are a single address, `contact@stateofthemap.in` (used for both the Contact section and the sponsorship-request button) — update `mailto:` links in `index.html` if that changes.

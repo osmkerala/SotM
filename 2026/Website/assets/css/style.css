@@ -237,6 +237,44 @@ img { max-width: 100%; display: block; }
 }
 .day-card h3 { font-size: 1.25rem; margin-bottom: 10px; }
 
+.schedule-note {
+  text-align: center;
+  margin: 28px 0 0;
+  font-weight: 600;
+  color: var(--green-mid);
+}
+
+/* Register banner */
+.register-banner {
+  background: linear-gradient(120deg, var(--red), #a8321f);
+  padding: 56px 0;
+  text-align: center;
+}
+.register-inner { max-width: 640px; margin: 0 auto; }
+.register-banner .badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+.register-banner h2 {
+  color: #fff;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  margin-bottom: 12px;
+}
+.register-banner p {
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 24px;
+}
+.btn-light { background: #fff; color: var(--red); }
+.btn-light:hover { background: var(--green-light); }
+
 /* Editions */
 .editions-grid {
   display: grid;
@@ -290,10 +328,12 @@ img { max-width: 100%; display: block; }
 .center-cta { text-align: center; }
 
 /* Contact */
+.contact-inner { max-width: 560px; }
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
+  text-align: center;
 }
 .contact-label {
   display: block;

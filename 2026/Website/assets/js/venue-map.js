@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   L.marker(venue)
     .addTo(map)
-    .bindPopup("Dr. R. Satheesh Centre for Remote Sensing and GIS<br>Mahatma Gandhi University, Athirampuzha, Kottayam")
+    .bindPopup("Dr. R. Satheesh Centre for Remote Sensing and GIS<br>School of Environmental Sciences, Mahatma Gandhi University<br>Athirampuzha, Kottayam, Kerala")
     .openPopup();
 
   // Re-enable scroll-to-zoom once the visitor has clicked into the map,

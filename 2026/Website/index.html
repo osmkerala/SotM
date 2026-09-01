@@ -9,10 +9,11 @@
 <meta property="og:title" content="State of the Map Kerala 2026">
 <meta property="og:description" content="14–15 November 2026 · Dr. R. Satheesh Centre for Remote Sensing and GIS, MG University, Kottayam, Kerala">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://kl.stateofthemap.in">
-<meta property="og:image" content="https://kl.stateofthemap.in/assets/img/2025.jpg">
+<meta property="og:url" content="https://kerala.stateofthemap.in">
+<meta property="og:image" content="https://kerala.stateofthemap.in/assets/img/2025.jpg">
 
 <link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -33,6 +34,7 @@
     </button>
     <nav class="site-nav" id="siteNav">
       <a href="#about">About</a>
+      <a href="#venue">Venue</a>
       <a href="#schedule">Schedule</a>
       <a href="#register">Register</a>
       <a href="#editions">Previous Editions</a>
@@ -80,6 +82,15 @@
         <h2>About OpenStreetMap Kerala</h2>
         <p>OpenStreetMap (OSM) Kerala is a volunteer community mapping the state's roads, buildings, public services and natural resources into the free, editable world map. During the 2018 and 2019 Kerala floods, the community mobilised rapidly to provide mapping data that supported relief and rescue efforts &mdash; work that continues today through workshops, mapping events, and collaboration with academic institutions and government bodies.</p>
       </div>
+    </div>
+  </section>
+
+  <section id="venue" class="section">
+    <div class="wrap">
+      <h2 class="section-title">Venue</h2>
+      <p class="section-lede">Dr. R. Satheesh Centre for Remote Sensing and GIS, Mahatma Gandhi University, Athirampuzha, Kottayam.</p>
+      <div id="venue-map" class="venue-map" role="img" aria-label="Map showing the SotM Kerala 2026 venue in Athirampuzha, Kottayam"></div>
+      <p class="venue-map-caption"><a href="https://www.openstreetmap.org/?mlat=9.658120&mlon=76.534364#map=18/9.658120/76.534364" target="_blank" rel="noopener">Open in OpenStreetMap</a></p>
     </div>
   </section>
 
@@ -195,6 +206,8 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="assets/js/venue-map.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

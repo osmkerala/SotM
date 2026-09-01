@@ -237,6 +237,19 @@ img { max-width: 100%; display: block; }
 }
 .day-card h3 { font-size: 1.25rem; margin-bottom: 10px; }
 
+.venue-map {
+  height: 340px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.venue-map-caption {
+  text-align: center;
+  margin: 16px 0 0;
+  font-size: 0.9rem;
+}
+
 .schedule-note {
   text-align: center;
   margin: 28px 0 0;

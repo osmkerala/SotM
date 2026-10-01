@@ -338,6 +338,48 @@ img { max-width: 100%; display: block; }
 .tier-card h3 { font-size: 1.1rem; margin-bottom: 6px; }
 .tier-price { font-size: 1.5rem; font-weight: 800; color: var(--red); margin-bottom: 10px; }
 .tier-desc { font-size: 0.88rem; margin: 0; }
+
+.sponsor-logos { margin-bottom: 40px; }
+.sponsor-logos-label {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green-mid);
+  margin-bottom: 18px;
+}
+.sponsor-logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+.sponsor-logo-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 160px;
+}
+.sponsor-logo-card img {
+  height: 44px;
+  max-width: 160px;
+  width: auto;
+  object-fit: contain;
+}
+.sponsor-logo-tier {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
 .center-cta { text-align: center; }
 
 /* Contact */

@@ -39,6 +39,7 @@
       <a href="#register">Register</a>
       <a href="#editions">Previous Editions</a>
       <a href="#sponsors">Sponsors</a>
+      <a href="media-kit.html">Media Kit</a>
       <a href="#contact">Contact</a>
       <a href="https://wiki.openstreetmap.org/wiki/State_of_the_Map_Kerala_2026" class="nav-cta" target="_blank" rel="noopener">Event Wiki</a>
     </nav>
@@ -64,7 +65,27 @@
         </div>
       </div>
 
+      <div class="countdown" id="countdown" aria-live="polite">
+        <div class="countdown-item">
+          <span class="countdown-value" id="cdDays">00</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-value" id="cdHours">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-value" id="cdMinutes">00</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-value" id="cdSeconds">00</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
+
       <div class="hero-actions">
+        <a class="btn btn-primary" href="https://makemypass.com/event/state-of-the-map-kerala-2026" target="_blank" rel="noopener">Register Now</a>
         <a class="btn btn-primary" href="#sponsors">Become a Sponsor</a>
         <a class="btn btn-ghost" href="https://wiki.openstreetmap.org/wiki/State_of_the_Map_Kerala_2026" target="_blank" rel="noopener">View on OSM Wiki</a>
       </div>
@@ -112,7 +133,7 @@
       </div>
       <p class="schedule-note">Detailed schedule will be updated soon.</p>
       <div class="center-cta">
-        <a class="btn btn-primary" href="https://cloud.disroot.org/apps/forms/s/frCcZA5QZR8yMJisE2knHX9J" target="_blank" rel="noopener">Submit a talk &mdash; Call for Proposals</a>
+        <a class="btn btn-primary" href="https://my.liberaforms.org/sotm-kerala-2026-call-for-papers" target="_blank" rel="noopener">Submit a talk &mdash; Call for Proposals</a>
       </div>
     </div>
   </section>
@@ -124,7 +145,7 @@
       <p>OSM Science (also known as the Academic Track) exists to showcase research and innovation in the scientific study of OpenStreetMap, and to connect the OSM community with the academic community through an open platform for exchanging ideas and building collaborations. At the global level, it welcomes empirical, methodological, conceptual and literature-review contributions on topics such as data collection, integration and quality analysis; contribution patterns and the social and human dimensions of the community; AI techniques (including generative AI) involving OSM; domain-specific or policy-relevant uses of OSM data; and work combining OSM with other spatial data sources.</p>
       <p>SotM Kerala 2026 is inviting academic and research presentations in that same spirit. If you'd like to present research or a scientific study involving OpenStreetMap, submit it through our Call for Proposals and select <strong>&ldquo;Academic Presentation&rdquo;</strong> from the <strong>Type of talk</strong> dropdown.</p>
       <div class="center-cta">
-        <a class="btn btn-primary" href="https://cloud.disroot.org/apps/forms/s/frCcZA5QZR8yMJisE2knHX9J" target="_blank" rel="noopener">Submit an academic presentation</a>
+        <a class="btn btn-primary" href="https://my.liberaforms.org/sotm-kerala-2026-call-for-papers" target="_blank" rel="noopener">Submit an academic presentation</a>
       </div>
     </div>
   </section>
@@ -137,6 +158,20 @@
       <div class="hero-actions">
         <a class="btn btn-light" href="https://makemypass.com/event/state-of-the-map-kerala-2026" target="_blank" rel="noopener">Register Now</a>
         <a class="btn btn-light" href="https://wiki.openstreetmap.org/wiki/State_of_the_Map_Kerala_2026" target="_blank" rel="noopener">Follow updates on the Wiki</a>
+        <div class="share-wrap">
+          <button type="button" class="btn btn-light" id="shareToggle" aria-haspopup="true" aria-expanded="false" aria-controls="sharePanel">Share event</button>
+          <div class="share-panel" id="sharePanel" hidden>
+            <a class="share-item" id="shareX" href="#" target="_blank" rel="noopener noreferrer">Share on X</a>
+            <button type="button" class="share-item" id="shareMastodon">Share on Mastodon</button>
+            <button type="button" class="share-item" id="shareLinkedIn">Share on LinkedIn</button>
+            <a class="share-item" id="shareTelegram" href="#" target="_blank" rel="noopener noreferrer">Share on Telegram</a>
+            <a class="share-item" id="shareEmail" href="#">Share by email</a>
+            <div class="share-divider"></div>
+            <span class="share-panel-label">Other platforms</span>
+            <button type="button" class="share-item" id="copyShort">Copy short text</button>
+            <button type="button" class="share-item" id="copyLong">Copy long text</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -241,5 +276,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="assets/js/venue-map.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/share.js"></script>
+<script src="assets/js/countdown.js"></script>
 </body>
 </html>

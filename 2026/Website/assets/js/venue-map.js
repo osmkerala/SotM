@@ -1,26 +1,48 @@
 document.addEventListener("DOMContentLoaded", function () {
   var el = document.getElementById("venue-map");
-  if (!el || typeof L === "undefined") return;
+  if (!el) return;
 
-  var venue = [9.658120, 76.534364];
+  var venueLngLat = [76.534364, 9.658120]; // MapLibre takes [lng, lat]
 
-  var map = L.map(el, {
-    scrollWheelZoom: false,
-  }).setView(venue, 17);
+  // Loaded as an ES module via dynamic import so this file can stay a
+  // plain classic script like the rest of the site's JS, and so this
+  // still works when the page is opened directly (file://) for testing.
+  import("https://unpkg.com/maplibre-gl@6.16.0/dist/maplibre-gl.mjs")
+    .then(function (maplibregl) {
+      var map = new maplibregl.Map({
+        container: el,
+        style: "https://tiles.openfreemap.org/styles/positron",
+        center: venueLngLat,
+        zoom: 16,
+        scrollZoom: false,
+        attributionControl: { compact: true },
+      });
 
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
-  }).addTo(map);
+      map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
 
-  L.marker(venue)
-    .addTo(map)
-    .bindPopup("Dr. R. Satheesh Centre for Remote Sensing and GIS<br>School of Environmental Sciences, Mahatma Gandhi University<br>Athirampuzha, Kottayam, Kerala")
-    .openPopup();
+      new maplibregl.Marker({ color: "#c0392b" })
+        .setLngLat(venueLngLat)
+        .setPopup(
+          new maplibregl.Popup({ offset: 24 }).setHTML(
+            "Dr. R. Satheesh Centre for Remote Sensing and GIS<br>School of Environmental Sciences, Mahatma Gandhi University<br>Athirampuzha, Kottayam, Kerala"
+          )
+        )
+        .addTo(map)
+        .togglePopup();
 
-  // Re-enable scroll-to-zoom once the visitor has clicked into the map,
-  // so the page can still be scrolled normally over it otherwise.
-  map.on("click", function () {
-    map.scrollWheelZoom.enable();
-  });
+      // Re-enable scroll-to-zoom once the visitor has clicked into the
+      // map, so the page can still be scrolled normally over it otherwise.
+      el.addEventListener(
+        "click",
+        function () {
+          map.scrollZoom.enable();
+        },
+        { once: true }
+      );
+    })
+    .catch(function () {
+      // CDN import failed (offline, blocked, etc.) — leave the section
+      // as a plain placeholder rather than throwing.
+      el.setAttribute("aria-label", el.getAttribute("aria-label") + " (map failed to load)");
+    });
 });

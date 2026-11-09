@@ -495,6 +495,13 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 10px;
   min-width: 160px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.sponsor-logo-card:hover {
+  border-color: var(--green-mid);
+  transform: translateY(-2px);
 }
 .sponsor-logo-card img {
   height: 44px;
@@ -506,6 +513,79 @@ img { max-width: 100%; display: block; }
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--text-soft);
+}
+
+/* Organising / Community Partners (same visual language as sponsor logos) */
+.partner-group-label {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green-mid);
+  margin: 36px 0 20px;
+}
+.partner-logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+.partner-logo-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 160px;
+  max-width: 220px;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.partner-logo-card:hover {
+  border-color: var(--green-mid);
+  transform: translateY(-2px);
+}
+.partner-logo-card img {
+  height: 44px;
+  max-width: 160px;
+  width: auto;
+  object-fit: contain;
+}
+.partner-logo-card--lg {
+  min-width: 200px;
+  padding: 24px 32px;
+}
+.partner-logo-card--lg img {
+  height: 68px;
+  max-width: 210px;
+}
+.partner-logo-card--lg img.partner-logo-tall {
+  height: 140px;
+  max-width: 100px;
+  border-radius: 6px;
+}
+.partner-logo-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+.partner-logo-card.no-logo {
+  justify-content: center;
+  min-height: 80px;
+}
+.partner-logo-card.no-logo .partner-logo-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
 }
 
 .center-cta { text-align: center; }

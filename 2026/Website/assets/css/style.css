@@ -391,38 +391,83 @@ img { max-width: 100%; display: block; }
   margin: 0 0 28px;
   font-size: 0.92rem;
 }
-.route-legend {
+.reach-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+.reach-map-col {
   display: flex;
   flex-direction: column;
-  gap: 14px;
 }
-.route-row {
-  display: flex;
-  gap: 16px;
+.reach-map-col .venue-map {
+  flex: 1;
+  height: auto;
+  min-height: 360px;
+}
+.reach-panel {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 22px 26px;
   box-shadow: var(--shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
 }
-.route-swatch {
-  flex: 0 0 auto;
-  width: 8px;
+.reach-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.reach-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--cream);
+  border: 1px solid var(--border);
   border-radius: 999px;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-.route-body {
+.reach-tab-icon {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+}
+.reach-tab:hover {
+  border-color: var(--green-mid);
+}
+.reach-tab.is-active {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  color: var(--white);
+}
+.reach-panels {
   flex: 1;
-  min-width: 0;
 }
-.route-row-head {
+.reach-panel-body {
+  display: none;
+}
+.reach-panel-body.is-active {
+  display: block;
+}
+.reach-panel-head {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
   gap: 10px 16px;
+  margin-bottom: 10px;
 }
-.route-row-head strong {
-  font-size: 1.05rem;
+.reach-panel-head strong {
+  font-size: 1.1rem;
   color: var(--green-dark);
 }
 .route-dist {
@@ -436,9 +481,14 @@ img { max-width: 100%; display: block; }
   border-radius: 999px;
   white-space: nowrap;
 }
-.route-desc {
-  margin: 8px 0 12px;
+.reach-panel-body p {
+  margin: 0 0 16px;
   font-size: 0.92rem;
+}
+.route-directions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
 }
 .route-directions {
   display: inline-block;
@@ -701,8 +751,9 @@ img { max-width: 100%; display: block; }
 
 /* Responsive */
 @media (max-width: 860px) {
-  .two-col, .schedule-grid, .contact-grid, .media-kit-grid { grid-template-columns: 1fr; }
+  .two-col, .schedule-grid, .contact-grid, .media-kit-grid, .reach-grid { grid-template-columns: 1fr; }
   .editions-grid, .tier-grid { grid-template-columns: 1fr 1fr; }
+  .reach-map-col .venue-map { flex: 0 0 auto; height: 300px; min-height: 0; }
 }
 
 @media (max-width: 640px) {

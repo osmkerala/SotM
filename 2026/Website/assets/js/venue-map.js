@@ -23,10 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
       new maplibregl.Marker({ color: "#c0392b" })
         .setLngLat(venueLngLat)
         .setPopup(
-          new maplibregl.Popup({ offset: 24 }).setHTML(
+          new maplibregl.Popup({ offset: 24, focusAfterOpen: false }).setHTML(
             "Dr. R. Satheesh Centre for Remote Sensing and GIS<br>School of Environmental Sciences, Mahatma Gandhi University<br>Athirampuzha, Kottayam, Kerala"
           )
         )
+        // focusAfterOpen is disabled above: MapLibre's default popup
+        // behaviour calls .focus() on the popup's close button when it
+        // opens, and browsers scroll a newly-focused element into view.
+        // Since this popup auto-opens on page load (togglePopup below),
+        // that was forcing the whole page to jump down to the venue map
+        // on every load.
         .addTo(map)
         .togglePopup();
 

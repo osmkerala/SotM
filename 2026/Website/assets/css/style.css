@@ -115,11 +115,14 @@ img { max-width: 100%; display: block; }
 }
 
 /* Hero */
+.section-banner {
+  background-image: url("../banner_sotm_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--green-light);
+}
 .hero {
-  background:
-    radial-gradient(circle at 85% 0%, rgba(107,122,58,0.15), transparent 55%),
-    radial-gradient(circle at 0% 100%, rgba(192,57,43,0.08), transparent 45%),
-    var(--green-light);
   padding: 88px 0 72px;
   text-align: center;
 }

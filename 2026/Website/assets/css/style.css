@@ -447,6 +447,45 @@ img { max-width: 100%; display: block; }
 .sched-posters { margin-top: 44px; }
 .sched-posters .poster-track-viewport { height: 220px; }
 .sched-posters .poster-slide { height: 220px; }
+
+.poster-slide-clickable { cursor: zoom-in; }
+
+.poster-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(35, 38, 28, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  z-index: 1000;
+}
+.poster-lightbox[hidden] { display: none; }
+.poster-lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.5);
+}
+.poster-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: var(--white);
+  color: var(--green-dark);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.poster-lightbox-close:hover { background: var(--green-light); }
 .sched-day:last-of-type { margin-bottom: 0; }
 .sched-day-head { text-align: center; margin-bottom: 22px; }
 .sched-day-head h3 { font-size: 1.3rem; margin: 10px 0 0; }

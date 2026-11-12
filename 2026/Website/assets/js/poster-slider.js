@@ -2,6 +2,46 @@ document.addEventListener("DOMContentLoaded", function () {
   var sliders = document.querySelectorAll(".poster-slider");
   if (!sliders.length) return;
 
+  var lightbox = null;
+  var lightboxImg = null;
+
+  function ensureLightbox() {
+    if (lightbox) return;
+    lightbox = document.createElement("div");
+    lightbox.className = "poster-lightbox";
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.hidden = true;
+
+    var closeBtn = document.createElement("button");
+    closeBtn.type = "button";
+    closeBtn.className = "poster-lightbox-close";
+    closeBtn.setAttribute("aria-label", "Close poster preview");
+    closeBtn.innerHTML = "&times;";
+
+    lightboxImg = document.createElement("img");
+    lightboxImg.alt = "Session poster, full size";
+
+    lightbox.appendChild(closeBtn);
+    lightbox.appendChild(lightboxImg);
+    document.body.appendChild(lightbox);
+
+    function close() { lightbox.hidden = true; lightboxImg.src = ""; }
+    closeBtn.addEventListener("click", close);
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !lightbox.hidden) close();
+    });
+  }
+
+  function openLightbox(src) {
+    ensureLightbox();
+    lightboxImg.src = src;
+    lightbox.hidden = false;
+  }
+
   function itemsPerView(mode) {
     if (mode !== "row") return 1;
     var w = window.innerWidth;
@@ -20,6 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var index = 0;
     var timer = null;
 
+    var lightboxEnabled = slider.getAttribute("data-lightbox") === "true";
+
     files.forEach(function (name) {
       var slide = document.createElement("div");
       slide.className = "poster-slide";
@@ -27,6 +69,12 @@ document.addEventListener("DOMContentLoaded", function () {
       img.src = folder + "/" + encodeURIComponent(name);
       img.alt = "Session poster";
       img.loading = "lazy";
+      if (lightboxEnabled) {
+        img.classList.add("poster-slide-clickable");
+        img.addEventListener("click", function () {
+          openLightbox(img.src);
+        });
+      }
       slide.appendChild(img);
       track.appendChild(slide);
     });

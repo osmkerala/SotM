@@ -368,6 +368,77 @@ img { max-width: 100%; display: block; }
 }
 .day-card h3 { font-size: 1.25rem; margin-bottom: 10px; }
 
+.sched-day { margin-bottom: 44px; }
+.sched-day-tabs { justify-content: center; margin-bottom: 28px; }
+.sched-day-subtitle { text-align: center; font-size: 1.3rem; margin-bottom: 22px; }
+.schedule-cta { text-align: center; margin: 28px 0 0; }
+.sched-day:last-of-type { margin-bottom: 0; }
+.sched-day-head { text-align: center; margin-bottom: 22px; }
+.sched-day-head h3 { font-size: 1.3rem; margin: 10px 0 0; }
+.sched-block { margin-bottom: 20px; }
+.sched-block-title {
+  font-weight: 700;
+  color: var(--green-mid);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 10px;
+}
+.sched-item {
+  display: flex;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.sched-block > .sched-item:last-child,
+.sched-track > .sched-item:last-child {
+  border-bottom: none;
+}
+.sched-time {
+  flex: 0 0 128px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--green-dark);
+}
+.sched-content { flex: 1; min-width: 0; }
+.sched-item-title { margin: 0 0 2px; color: var(--text); font-weight: 600; font-size: 0.96rem; }
+.sched-item-speaker { margin: 0; font-size: 0.85rem; }
+.sched-break {
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  background: var(--cream);
+  border-radius: 999px;
+  padding: 8px 18px;
+  margin: 16px auto;
+  max-width: fit-content;
+}
+.sched-tracks {
+  display: grid;
+  gap: 18px;
+}
+.sched-tracks-2 { grid-template-columns: 1fr 1fr; }
+.sched-tracks-3 { grid-template-columns: 1fr 1fr 1fr; }
+.sched-track {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+.sched-track .sched-item { padding: 8px 0; }
+.sched-track-label {
+  display: inline-block;
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.03em;
+  padding: 5px 11px;
+  border-radius: 999px;
+  margin: 0 0 10px;
+}
+
 .venue-map {
   height: 340px;
   border-radius: var(--radius);
@@ -754,12 +825,14 @@ img { max-width: 100%; display: block; }
 
 /* Responsive */
 @media (max-width: 860px) {
-  .two-col, .schedule-grid, .contact-grid, .media-kit-grid, .reach-grid { grid-template-columns: 1fr; }
+  .two-col, .schedule-grid, .contact-grid, .media-kit-grid, .reach-grid, .sched-tracks-2, .sched-tracks-3 { grid-template-columns: 1fr; }
   .editions-grid, .tier-grid { grid-template-columns: 1fr 1fr; }
   .reach-map-col .venue-map { flex: 0 0 auto; height: 300px; min-height: 0; }
 }
 
 @media (max-width: 640px) {
+  .sched-item { flex-direction: column; gap: 3px; }
+  .sched-time { flex-basis: auto; }
   .site-nav {
     position: absolute;
     top: 72px;

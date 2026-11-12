@@ -29,6 +29,33 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Generate session posters manifest
+        run: |
+          POSTER_DIR="2026/Website/SessionPosters"
+          mkdir -p "$POSTER_DIR"
+          cd "$POSTER_DIR"
+          python3 -c '
+          import json, os, subprocess
+
+          files = []
+          for name in sorted(os.listdir(".")):
+              if name.startswith(".") or name == "manifest.json":
+                  continue
+              if not os.path.isfile(name):
+                  continue
+              try:
+                  mime = subprocess.check_output(["file", "--mime-type", "-b", name], text=True).strip()
+              except Exception:
+                  continue
+              if mime.startswith("image/"):
+                  files.append(name)
+
+          with open("manifest.json", "w") as f:
+              json.dump(files, f)
+          print("Generated manifest.json:", files)
+          '
+          cat manifest.json
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

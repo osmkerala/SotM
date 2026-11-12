@@ -194,19 +194,30 @@
     <div class="wrap">
       <h2 class="section-title">Schedule</h2>
       <p class="section-lede">Two days, in Kottayam. Full session list to be announced closer to the event.</p>
-      <div class="schedule-grid">
-        <div class="day-card">
-          <span class="day-tag">Day 1 &middot; 14 Nov</span>
-          <h3>Talks &amp; Discussions</h3>
-          <p>Mapping projects and policy discussions. Experts and volunteers share their experience from across the OSM ecosystem.</p>
+      <div class="schedule-teaser-grid">
+        <div class="schedule-cards-col">
+          <div class="day-card">
+            <span class="day-tag">Day 1 &middot; 14 Nov</span>
+            <h3>Talks &amp; Discussions</h3>
+            <p>Mapping projects and policy discussions. Experts and volunteers share their experience from across the OSM ecosystem.</p>
+          </div>
+          <div class="day-card">
+            <span class="day-tag">Day 2 &middot; 15 Nov</span>
+            <h3>Workshops &amp; Hands-on</h3>
+            <p>Training for new volunteers on mapping with OSM, plus advanced sessions for experienced mappers.</p>
+          </div>
         </div>
-        <div class="day-card">
-          <span class="day-tag">Day 2 &middot; 15 Nov</span>
-          <h3>Workshops &amp; Hands-on</h3>
-          <p>Training for new volunteers on mapping with OSM, plus advanced sessions for experienced mappers.</p>
+        <div class="schedule-poster-col">
+          <div class="poster-slider" data-mode="single" data-interval="2200" data-manifest="SessionPosters/manifest.json" data-folder="SessionPosters" hidden>
+            <button type="button" class="poster-arrow poster-arrow-prev" aria-label="Previous poster">&lsaquo;</button>
+            <div class="poster-track-viewport">
+              <div class="poster-track"></div>
+            </div>
+            <button type="button" class="poster-arrow poster-arrow-next" aria-label="Next poster">&rsaquo;</button>
+          </div>
+          <p class="schedule-cta"><a class="btn btn-primary" href="schedule.html">View Full Schedule</a></p>
         </div>
       </div>
-      <p class="schedule-cta"><a class="btn btn-primary" href="schedule.html">View Full Schedule</a></p>
     </div>
   </section>
 
@@ -432,6 +443,7 @@
 <script src="assets/js/venue-map.js"></script>
 <script src="assets/js/reach-tabs.js" defer></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/poster-slider.js" defer></script>
 <script src="assets/js/share.js"></script>
 <script src="assets/js/countdown.js"></script>
 </body>

@@ -371,7 +371,82 @@ img { max-width: 100%; display: block; }
 .sched-day { margin-bottom: 44px; }
 .sched-day-tabs { justify-content: center; margin-bottom: 28px; }
 .sched-day-subtitle { text-align: center; font-size: 1.3rem; margin-bottom: 22px; }
-.schedule-cta { text-align: center; margin: 28px 0 0; }
+.schedule-cta { text-align: center; margin: 0; }
+
+.schedule-teaser-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+.schedule-cards-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.schedule-cards-col .day-card { flex: 1; }
+.schedule-poster-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Poster slider (shared: homepage single-view + schedule.html row-view) */
+.poster-slider { position: relative; }
+.poster-slider[hidden] { display: none; }
+.poster-track-viewport {
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.poster-track {
+  display: flex;
+  transition: transform 0.45s ease;
+}
+.poster-slide {
+  flex: 0 0 calc(100% / var(--items, 1));
+  box-sizing: border-box;
+  padding: 0 6px;
+}
+.poster-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--cream);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: block;
+}
+.poster-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  color: var(--green-dark);
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+}
+.poster-arrow:hover { background: var(--green-light); }
+.poster-arrow-prev { left: -16px; }
+.poster-arrow-next { right: -16px; }
+
+.schedule-teaser-grid .poster-track-viewport { height: 400px; }
+.schedule-teaser-grid .poster-slide { height: 400px; }
+
+.sched-posters { margin-top: 44px; }
+.sched-posters .poster-track-viewport { height: 220px; }
+.sched-posters .poster-slide { height: 220px; }
 .sched-day:last-of-type { margin-bottom: 0; }
 .sched-day-head { text-align: center; margin-bottom: 22px; }
 .sched-day-head h3 { font-size: 1.3rem; margin: 10px 0 0; }
@@ -825,7 +900,7 @@ img { max-width: 100%; display: block; }
 
 /* Responsive */
 @media (max-width: 860px) {
-  .two-col, .schedule-grid, .contact-grid, .media-kit-grid, .reach-grid, .sched-tracks-2, .sched-tracks-3 { grid-template-columns: 1fr; }
+  .two-col, .schedule-grid, .schedule-teaser-grid, .contact-grid, .media-kit-grid, .reach-grid, .sched-tracks-2, .sched-tracks-3 { grid-template-columns: 1fr; }
   .editions-grid, .tier-grid { grid-template-columns: 1fr 1fr; }
   .reach-map-col .venue-map { flex: 0 0 auto; height: 300px; min-height: 0; }
 }
